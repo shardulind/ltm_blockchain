@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title style="centre-align">"APPLICATION FORM"</title>
+<link href="appl_form.css" type="text/css" rel="stylesheet">
+</head>
+<body onload="initiate()">
+<script src="drop_down_list.js"></script>
+<div id="main">
+<h1 class="text-center bg-dark text-white">APPLICATION FORM</h1>
+
+<form method="post" onsubmit="return validation()">
+
+<div class="form-group">
+<label for="fname" >FIRST NAME:</label>
+<input class="form-control" type="text" id="fname" name="fname" required>
+<span id="fnameerror" class="text-danger font-weight-bold"></span>
+</div>
+<br><br>
+
+<div class="form-group">
+<label for="mname" >MIDDLE NAME:</label>
+<input type="text" id="mname" name="mname" required>
+<span id="mnameerror" class="text-danger font-weight-bold "></span>
+</div><br><br>
+
+<div class="form-group">
+<label for="fname">LAST NAME:</label>
+<input type="text" id="lname" name="lname" required>
+<span id="lnameerror" class="text-danger font-weight-bold"></span>
+</div><br><br>
+
+<div class="form-group">
+<label for="adno">ADHARCARD NO:</label>
+<input type="text" id="adno" name="adno" required>
+<span id="adnoerror" class="text-danger font-weight-bold"></span>
+</div><br><br>
+
+<div class="form-group">
+<label for="district">DISTRICT:</label>
+<select class="form-control"  id="district" name="district" onclick="getTaluka()" required>
+</select></div><br><br>
+
+<div class="form-group">
+<label for="taluka">TALUKA:</label>
+<select class="form-control" id="taluka" name="taluka" onclick="getVillage()" required>
+</select></div>
+<br><br>
+
+<div class="form-group">
+<label for="village">VILLAGE:</label>
+<select class="form-control" id="village" name="village" required>
+</select></div>
+<br><br>
+
+<div class="form-group">
+<label for="pincode">PINCODE:</label>
+<input type="number" id="pincode" name="pincode" required>
+<span id="pincodeerror" class="text-danger font-weight-bold"></span>
+</div><br><br>
+
+<div class="form-group">
+<label for="mobno">MOBILE NO:</label>
+<input type="text" id="mobno" name="mobno" required>
+<span id="mobileerror" class="text-danger font-weight-bold color-red"></span>
+</div><br><br>
+
+<div class="form-group">
+<label for="propertyno">PROPERTY NO:</label>
+<input type="text" class="form-control" id="propertyno" name="propertyno" required>
+</div>
+<br><br>
+
+<div class="form-group">
+<input type ="submit" value="Submit" ></div>
+</div>
+</form>
+
+<script type="text/javascript">
+
+function validation(){
+
+  var fname=document.getElementById('fname').value;
+  var mname=document.getElementById('mname').value;
+  var lname=document.getElementById('lname').value;
+  var adno=document.getElementById('adno').value;
+  var pincode= document.getElementById('pincode').value;
+  var mobilenumber= document.getElementById('mobno').value;
+  
+  
+  var namecheck= /^[A-Za-z. ]{3,30}$/;
+  var adnocheck=/^[1-9][0-9]{11}$/;
+  var pincodecheck=/^[1-8][1-9][1-9][0-9]{3}$/;
+  var mobilenumbercheck= /^([+]91)?[789][0-9]{9}$/;
+ 
+  if(namecheck.test(fname)){
+        document.getElementById('fnameerror').innerHTML=" " ;
+  }else{
+   document.getElementById('fnameerror').innerHTML=" **Fname is Invalid ";
+return false;
+  }
+  
+  if(namecheck.test(mname)){
+        document.getElementById('mnameerror').innerHTML=" " ;
+  }else{
+   document.getElementById('mnameerror').innerHTML=" **Mname is Invalid ";
+return false;
+  }
+  
+  if(namecheck.test(lname)){
+        document.getElementById('lnameerror').innerHTML=" " ;
+  }else{
+   document.getElementById('lnameerror').innerHTML=" **Lname is Invalid ";
+return false;
+  }
+  
+  if(adnocheck.test(adno)){
+        document.getElementById('adnoerror').innerHTML=" " ;
+  }else{
+   document.getElementById('adnoerror').innerHTML=" **Adharcard no is Invalid ";
+return false;
+  }
+  
+ if(pincodecheck.test(pincode)){
+        document.getElementById('pincodeerror').innerHTML=" " ;
+  }else{
+   document.getElementById('pincodeerror').innerHTML=" **Pincode is Invalid ";
+return false;
+  }
+ 
+ if(mobilenumbercheck.test(mobilenumber)){
+        document.getElementById('mobileerror').innerHTML=" " ;
+  }else{
+   document.getElementById('mobileerror').innerHTML=" **Mobile no is Invalid ";
+return false;
+  }
+ 
+       }  
+</script>
+</body>
+</html>

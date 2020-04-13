@@ -1,0 +1,36 @@
+body {
+  background-image: url('http://pragati.nationalinterest.in/wp-content/uploads/2014/03/fields-e1394199933380.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  
+}
+#main{
+	width:400px;
+	height:700px;
+	border:solid 2px #ffffff;
+	margin:5px 550px;
+	position:fixed;
+}
+label{
+	text-align:left;
+	width:150px;
+	display:inline-block;
+	color:#ffffff;
+}
+select{
+	width:150px; 
+}
+input{
+	width:150px;
+}
+span{
+	color:#ff0000;
+	position:bottom;
+    /*margin-bottom:5px;*/
+}
+form{
+    text-align:center;
+	/*position:fixed;*/
+}

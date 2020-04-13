@@ -1,0 +1,60 @@
+<html>
+<head>
+<link href="appl_form.css" type="text/css" rel="stylesheet">
+</head>
+<body bgcolor="grey" text="white" align="center" onload="initiate()">
+
+<script src="drop_down_list.js"></script>
+
+<form method="post">
+<br><br>
+
+<div class="form-group">
+<label for="district">DISTRICT:</label>
+<select class="form-control"  id="district" name="district" onclick="getTaluka()" required>
+</select></div><br><br>
+
+<div class="form-group">
+<label for="taluka">TALUKA:</label>
+<select class="form-control" id="taluka" name="taluka" onclick="getVillage()" required>
+</select></div>
+<br><br>
+
+<div class="form-group">
+<label for="village">VILLAGE:</label>
+<select class="form-control" id="village" name="village" required>
+</select></div>
+<br><br>
+
+<div class="form-group">
+<label for="propertyno">PROPERTY NO:</label>
+<input type="text" class="form-control" id="propertyno" name="propertyno" required>
+</div>
+<br><br>
+
+<div class="form-group">
+<input type="submit" class="form-control" value="SEARCH">
+</div>
+<br><br>
+</form>
+
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: green;
+}
+</style>
+<form action="file:///E:/applicaton_form.html" method="post" target="viewer">
+<button class="button" id="apply"  >APPLY</button>
+</form>
+</body>
+</html>
