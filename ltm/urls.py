@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from . import views as sro_views
 
 urlpatterns = [
 	path('application_form', views.application_form),
+	path('apply_to_sro', sro_views.receive_application),
     path('admin/', admin.site.urls),
 ]
