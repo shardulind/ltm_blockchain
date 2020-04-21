@@ -7,3 +7,4 @@ class BlockForm(forms.Form):
 	previous_owner_lname = forms.CharField(label="Owners Last Name")
 	previous_owner_adharno = forms.CharField(label="Owners Aadhar Number")
 	transaction_note = forms.CharField(label="Note", widget=forms.Textarea	)
+	pincode = forms.CharField(label="Pincode")

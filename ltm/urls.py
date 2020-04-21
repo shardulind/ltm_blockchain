@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 import sro.views as sro_views
-
+import revoffice.views as rev_views
 
 urlpatterns = [
-    path('application_form', views.application_form),
-    path('apply_to_sro', sro_views.receive_application),
+	path('application_form', views.application_form),
+	path('apply_to_sro', sro_views.receive_application),
     path('display_applications', sro_views.display_pending_applicaitons),
     path('process_application', sro_views.process_application, name="process_application"),
     path('send_appn_to_rev', sro_views.send_appn_to_rev, name="send_appn_to_rev"),
+    path('get_tempblock_at_rev', rev_views.get_block_at_rev, name='get_tempblock_at_rev'),
     path('admin/', admin.site.urls)
 ]
