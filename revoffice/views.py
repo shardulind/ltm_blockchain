@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
 from hashlib import sha256
 import json
 
@@ -42,7 +43,7 @@ class Blockchain:
 
 blockchain = Blockchain()
 
-
+@csrf_exempt
 def get_block_at_rev(request):
-	print(request)
-	
+	print(request.POST)
+	return HttpResponse('revenue mdhe alata .. waa')
