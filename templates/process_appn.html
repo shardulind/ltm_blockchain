@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Process Application</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+	<section>
+	<p>
+		<b>Survey No.</b> 		{{application.survey_no}} <br/>
+		<b>Applicants Name:</b> {{ application.applicants_firstname }} {{ application.applicants_middlename }} {{application.applicants_lastname }} <br/>
+		<b>Applicants Adhhar No:</b> {{ application.applicants_adharno}} </br>
+		<b>Applicants Mobile No:</b> {{ application.applicants_mobno}} </br>
+		<b>Time of Applcation:</b> {{application.timestamp}}</br> 
+	</p>
+</section>
+</div>
+</div>
+<section>
+</br>
+</br>
+	<form action="{% url "send_appn_to_rev" %}?obj_id={{obj_id}}&survey_no={{application.survey_no}}&newowner_fname={{application.applicants_firstname}}&newowner_mname={{application.applicants_middlename}}&newowner_lname={{application.applicants_lastname}}&newowner_adharno={{application.applicants_adharno}}&newowner_mobno={{application.applicants_mobno}}" method="POST">
+		{%csrf_token%}
+		{{form.as_p}}
+		<input type="submit" value="submit">
+	</form>
+</section>
+</body>
+</html>
