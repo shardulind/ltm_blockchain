@@ -1,7 +1,6 @@
 from django.db import models
 
-# Create your models here.
-class SROMapping(models.Model):
-	pincode = models.IntegerField()
-	ip_address = models.GenericIPAddressField()
-
+class IPMapping(models.Model):
+	pincode = models.CharField(max_length=9)
+	sro_ipaddress = models.GenericIPAddressField()
+	rev_ipaddress = models.GenericIPAddressField()

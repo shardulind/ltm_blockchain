@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SRO - Requested Applications for Land registries </title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th> Survey No </th>
+			<th> Applicants Name </th>
+			<th> Date and Time </th>
+		</tr>
+		{% for item in all_applications%}
+		<tr>
+			<td>{{item.survey_no}}</td>
+			<td>{{item.applicants_firstname}} {{item.applicants_lastname}}</td>
+			<td>{{item.timestamp}}</td>
+		</tr>
+		{% endfor %}
+
+	</table>
+</body>
+</html>

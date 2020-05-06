@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+table-image {
+  td, th {
+    vertical-align: middle;
+  }
+}
+	</style>
+	<title>Revenue office Pending Blocks </title>
+</head>
+
+<body>
+	<div class="container">
+	<table>
+		<tr>
+			<th> Survey No. </th>
+			<th> New Owner Name </th>
+			<th> Previous Owner Name </th>
+		</tr>
+
+		{% for item in all_applications%}
+			<tr>
+			<td>{{item.survey_no}}</td>
+			<td>{{item.PreviousOwner_fname}}  {{item.PreviousOwner_lname}}    </td>
+			<td>{{item.NewOwner_fname}} {{item.NewOwner_lname}}</td>
+			<td><a class="w3-button w3-green" href="{% url "ladle" %}?survey_no={{item.survey_no}}&pincode={{item.pincode}}&PreviousOwner_fname={{item.PreviousOwner_fname}}&PreviousOwner_mname={{item.PreviousOwner_mname}}&PreviousOwner_lname={{item.PreviousOwner_lname}}&PreviousOwner_adhaarno={{item.PreviousOwner_adhaarno}}&NewOwner_fname={{item.NewOwner_fname}}&NewOwner_mname={{item.NewOwner_mname}}&NewOwner_lname={{item.NewOwner_lname}}&NewOwner_adhaarno={{item.NewOwner_adhaarno}}&TransactionNote={{item.TransactionNote}}">Accept</a>
+			<!--button class="w3-button w3-white w3-border">Button</button-->
+			</td>
+			</tr>
+		{% endfor %}
+		
+
+
+
+	</table>
+</div>
+
+
+
+</body>
+
+</html>
