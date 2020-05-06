@@ -7,6 +7,12 @@ from .forms import BlockForm
 from datetime import datetime
 import requests
 # Create your views here.
+
+
+def sro_homepage(request):
+	return render(request, 'sro_homepage.html')
+
+
 @csrf_exempt
 def receive_application(request):
 	print(request.POST)
@@ -58,9 +64,6 @@ def create_block( timestamp, survey_no, pincode, PrevOwner_fname, PrevOwner_mnam
 
 
 def send_appn_to_rev(request):
-	print(request.POST)
-	print(request.GET)
-
 
 	temp_block = create_block(
 		datetime.now(), 
@@ -77,11 +80,10 @@ def send_appn_to_rev(request):
 		request.POST['transaction_note'])
 	#print(temp_block)
 	rev_ip = IPMapping.objects.get(pincode=request.POST['pincode'])
-	
 	res = requests.post(f'http://{rev_ip.rev_ipaddress}:8000/get_tempblock_at_rev',data=temp_block)
+	#return HttpResponse("Data sent to Rev. dept")
+	return render(request, 'sro_homepage.html')
 
-
-	return HttpResponse("baghut")
 
 @csrf_exempt
 def process_application(request):

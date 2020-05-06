@@ -1,8 +1,16 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from umbra.models import IPMapping
 import requests	
+
+
+
+def index(request):
+	return render(request, 'index.html')
+
+def homepage(request):
+	return render(request, "homepage.html")
 
 
 @csrf_exempt
@@ -19,6 +27,7 @@ def application_form(request):
 		print(postman1)
 		print(postman2)
 
-		return HttpResponse(f"Data sent {postman1}  -  {postman2}")
+		return render(request, 'sro_homepage.html')
+		#return HttpResponse(f"Data sent {postman1}  -  {postman2}")
 	else:
 		return render(request, 'application_form.html')
